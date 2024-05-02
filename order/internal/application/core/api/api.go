@@ -2,7 +2,7 @@ package api
 
 import (
 	"github.com/psbrar99/go-grpc/order/internal/application/core/domain"
-	"github.com/psbrar99/go-grpc/order/internal/application/ports"
+	"github.com/psbrar99/go-grpc/order/internal/ports"
 )
 
 type Application struct {
