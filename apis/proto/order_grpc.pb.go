@@ -4,7 +4,7 @@
 // - protoc             v4.25.3
 // source: proto/order.proto
 
-package go_grpc
+package apis
 
 import (
 	context "context"

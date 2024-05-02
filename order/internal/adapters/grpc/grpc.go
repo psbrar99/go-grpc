@@ -3,7 +3,6 @@ package grpc
 import (
 	"context"
 
-	"github.com/psbrar99/go-grpc/apis"
 	"github.com/psbrar99/go-grpc/order/internal/application/core/domain"
 )
 
@@ -23,6 +22,6 @@ func (a Adapter) Create(ctx context.Context, request apis.CreateOrderRequest) (a
 		return nil, err
 	}
 
-	return &gr.CreateOrderResponse{OrderID: result.ID}, nil
+	return &apis.CreateOrderResponse{OrderID: result.ID}, nil
 
 }

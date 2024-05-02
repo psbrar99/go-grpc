@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "github.com/psbrar99/go-grpc";
+option go_package = "github.com/psbrar99/go-grpc/apis";
 
 message  CreateOrderRequest{
     int64 user_id = 1;
