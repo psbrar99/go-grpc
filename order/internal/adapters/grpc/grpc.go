@@ -3,11 +3,11 @@ package grpc
 import (
 	"context"
 
-	gr "github.com/psbrar99/go-grpc/apis"
+	"github.com/psbrar99/go-grpc/apis"
 	"github.com/psbrar99/go-grpc/order/internal/application/core/domain"
 )
 
-func (a Adapter) Create(ctx context.Context, request gr.CreateOrderRequest) (gr.CreateOrderResponse, error) {
+func (a Adapter) Create(ctx context.Context, request apis.CreateOrderRequest) (apis.CreateOrderResponse, error) {
 	var orderItems []domain.Orderitems
 
 	for _, oi := range request.OrderItems {
