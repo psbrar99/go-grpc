@@ -3,7 +3,7 @@ package grpc
 import (
 	"context"
 
-	gr "github.com/psbrar99/go-grpc"
+	gr "github.com/psbrar99/go-grpc/apis"
 	"github.com/psbrar99/go-grpc/order/internal/application/core/domain"
 )
 

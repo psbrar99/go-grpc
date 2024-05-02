@@ -12,4 +12,5 @@ require (
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.5 // indirect
 	github.com/psbrar99/go-grpc v0.0.0-20240502192332-b300f4dc4b3e // indirect
+	github.com/psbrar99/go-grpc/apis v0.0.0-20240502192332-b300f4dc4b3e // indirect
 )
