@@ -5,15 +5,17 @@ import (
 	"log"
 	"net"
 
-	"github.com/huseyinbabal/microservices-proto/golang/order"
+	"github.com/psbrar99/go-grpc/apis"
+
 	"github.com/psbrar99/go-grpc/order/internal/ports"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/reflection"
 )
 
 type Adapter struct {
 	api  ports.APIPort
 	port int
-	order.UnimplementedOrderServer
+	apis.RegisterOrderServer
 }
 
 func NewAdapter(api ports.APIPort, port int) *Adapter {
@@ -30,5 +32,11 @@ func (a Adapter) Run() {
 		log.Fatalf("Unable to listen on port: %d, error: %v", a.port, err)
 	}
 	grpcserver := grpc.NewServer()
-	order.RegisterOrderServer(grpcserver, a)
+	apis.RegisterOrderServer(grpcserver, a)
+	if config.GetEnv() == "dev" {
+		reflection.Register(grpcserver)
+	}
+	if err := grpcserver.Serve(listen); err != nil {
+		log.Fatalf("failed to serve grpc")
+	}
 }
