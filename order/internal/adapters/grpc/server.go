@@ -5,8 +5,7 @@ import (
 	"log"
 	"net"
 
-	"github.com/psbrar99/go-grpc/apis"
-
+	"github.com/psbrar99/go-grpc/order/config"
 	"github.com/psbrar99/go-grpc/order/internal/ports"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
